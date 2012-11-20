@@ -158,7 +158,7 @@ FROM #{@model.table_name}
 
       def types_to_crcs
         type_values.compact.inject({}) { |hash, type|
-          hash[type] = type.to_crc32
+          hash[type] = type.to_s.to_crc32
           hash
         }
       end
